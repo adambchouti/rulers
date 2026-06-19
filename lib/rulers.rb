@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative "rulers/version"
-require "rulers/array"
 
 module Rulers
   # Basica application that starts a Rack server
