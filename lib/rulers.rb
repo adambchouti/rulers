@@ -8,6 +8,11 @@ module Rulers
   class Application
     def call(env)
 
+      # hack to get rid of the favicon error
+      if env["PATH_INFO"] == "/favicon.ico"
+        return [404, {'Content-Type' => 'text/html'}, []]
+      end
+
       # Get a controller and an action from the URL
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
