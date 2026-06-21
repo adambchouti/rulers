@@ -4,6 +4,7 @@ require_relative "rulers/version"
 require_relative "rulers/routing"
 require_relative "rulers/util"
 require_relative "rulers/dependencies"
+require_relative "rulers/controller"
 
 module Rulers
   # Basica application that starts a Rack server
@@ -20,14 +21,6 @@ module Rulers
       text = controller.send(act)
 
       [200, { "content-type" => "text/html" }, [text]]
-    end
-  end
-
-  class Controller
-    attr_reader :env
-
-    def initialize(env)
-      @env = env
     end
   end
 end
