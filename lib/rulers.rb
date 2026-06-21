@@ -7,10 +7,9 @@ module Rulers
   # Basica application that starts a Rack server
   class Application
     def call(env)
-
       # hack to get rid of the favicon error
       if env["PATH_INFO"] == "/favicon.ico"
-        return [404, {'Content-Type' => 'text/html'}, []]
+        return [404, {"content-type" => "text/html"}, []]
       end
 
       # Get a controller and an action from the URL
