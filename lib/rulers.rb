@@ -2,6 +2,8 @@
 
 require_relative "rulers/version"
 require_relative "rulers/routing"
+require_relative "rulers/util"
+require_relative "rulers/dependencies"
 
 module Rulers
   # Basica application that starts a Rack server
